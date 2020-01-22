@@ -32,13 +32,13 @@ void main(void)
 		scanf("%d", &i);
 	        switch (i) {
 			case 1:
-				system("aplay Song1.wav");
+				system("aplay beautiful_life-ace_of_base.wav");
 				break;
 			case 2:
-				system("aplay Song2.wav");
+				system("aplay dont_speak-no_doubt.wav");
 				break;
 			case 3:
-				system("aplay Song3.wav");
+				system("aplay i_ran_so_far_away-flock_of_seagulls.wav ");
 				break;
 			default:
 				printf("No valid option\n");
