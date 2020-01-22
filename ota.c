@@ -7,7 +7,7 @@
 void main(void)
 {
 	static const char nextVerFile[] = "./nextVersion";
-	static const char currVerFile[] = "./nextVersion";
+	static const char currVerFile[] = "./version";
 	char verStr[10];
 	float currVerFloat, nextVerFloat;
 	FILE *file;
@@ -29,7 +29,7 @@ void main(void)
 	fclose(file);
 
 	if (nextVerFloat > currVerFloat)
-		printf("OTA pdate is available");
+		printf("OTA update is available\n");
 	
 }
  
