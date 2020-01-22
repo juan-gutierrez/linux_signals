@@ -15,6 +15,7 @@ void sig_handler_int(int num)
 void sig_handler_quit(int num)
 {
 	printf("On SIGQUIT handler sig(%d)\n",num);
+	exit(0);
 }
 
 void main(void)
@@ -32,13 +33,13 @@ void main(void)
 		scanf("%d", &i);
 	        switch (i) {
 			case 1:
-				system("aplay beautiful_life-ace_of_base.wav");
+				system("aplay -V stereo beautiful_life-ace_of_base.wav");
 				break;
 			case 2:
-				system("aplay dont_speak-no_doubt.wav");
+				system("aplay -V stereo dont_speak-no_doubt.wav");
 				break;
 			case 3:
-				system("aplay i_ran_so_far_away-flock_of_seagulls.wav ");
+				system("aplay -V stereo i_ran_so_far_away-flock_of_seagulls.wav");
 				break;
 			default:
 				printf("No valid option\n");
