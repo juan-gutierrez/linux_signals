@@ -19,12 +19,31 @@ void sig_handler_quit(int num)
 
 void main(void)
 {
+	int i;
 	signal(SIGINT,sig_handler_int);
 	signal(SIGQUIT,sig_handler_quit);
 
 	while(1) {
-		printf("Hello\n");
-		sleep(2);
+		printf("Which song you want to play\n");
+		printf("\n");
+		printf("Song1 ............. 1 \n");
+		printf("Song2 ............. 2 \n");
+		printf("Song3 ............. 3 \n");
+		scanf("%d", &i);
+	        switch (i) {
+			case 1:
+				system("aplay Song1.wav");
+				break;
+			case 2:
+				system("aplay Song2.wav");
+				break;
+			case 3:
+				system("aplay Song3.wav");
+				break;
+			default:
+				printf("No valid option\n");
+				break;
+		}	
 	}
 }
  
