@@ -14,22 +14,25 @@ void main(void)
 
 	/* Check for new version and update nextVersion file*/
 	system("./nextversion.sh");
+
+	/* Open and read currentVersion file and locally store current version value */
+
+	file = fopen(currVerFile, "r");
+	fscanf(file, "%f", &currVerFloat);
+	printf("verFloat = %f\n", currVerFloat);
+	fclose(file);
+
 	
 	/* Open and read nextVersion file and locally store next version value */
 	file = fopen(nextVerFile, "r");
-	fgets (verStr , 10 , file);
+	fscanf(file, "%s", verStr);
 	sscanf(verStr, "%f", &nextVerFloat);
 	printf("verFloat = %f\n", nextVerFloat);
 	fclose(file);
 
-	file = fopen(currVerFile, "r");
-	fgets (verStr , 10 , file);
-	sscanf(verStr, "%f", &currVerFloat);
-	printf("verFloat = %f\n", currVerFloat);
-	fclose(file);
 
 	if (nextVerFloat > currVerFloat)
-		printf("OTA update is available\n");
+		printf("New update %s is available\n", verStr);
 	
 }
  
